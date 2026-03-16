@@ -13,7 +13,9 @@ const upload = multer({ storage });
 const app = express();
 const PORT = process.env.PORT || 168;
 
-app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:3000", "https://your-frontend-domain.onrender.com"],
+}));
 app.use(express.json());
 
 app.post("/analyze-image", upload.single("file"), getImageAnalysis);
