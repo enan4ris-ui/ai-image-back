@@ -32,3 +32,5 @@ const getImageCreator = async (req, res) => {
     });
   }
 };
+
+module.exports = getImageCreator;
